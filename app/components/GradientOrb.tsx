@@ -8,7 +8,7 @@ export default function GradientOrb() {
 
   const orbs = [
     {
-      className: theme === 'dark' ? 'bg-emerald-500/20' : 'bg-emerald-500/8',
+      className: theme === 'dark' ? 'bg-emerald-500/10' : 'bg-emerald-500/4',
       position: 'top-1/4 left-1/4',
       size: 'w-96 h-96',
       animation: {
@@ -19,7 +19,7 @@ export default function GradientOrb() {
       duration: 20,
     },
     {
-      className: theme === 'dark' ? 'bg-green-500/20' : 'bg-green-500/8',
+      className: theme === 'dark' ? 'bg-green-500/10' : 'bg-green-500/4',
       position: 'bottom-1/4 right-1/4',
       size: 'w-[28rem] h-[28rem]',
       animation: {
@@ -30,7 +30,7 @@ export default function GradientOrb() {
       duration: 25,
     },
     {
-      className: theme === 'dark' ? 'bg-teal-500/15' : 'bg-teal-500/6',
+      className: theme === 'dark' ? 'bg-teal-500/8' : 'bg-teal-500/3',
       position: 'top-1/2 right-1/3',
       size: 'w-80 h-80',
       animation: {
@@ -47,7 +47,7 @@ export default function GradientOrb() {
       {orbs.map((orb, index) => (
         <motion.div
           key={index}
-          className={`absolute ${orb.position} ${orb.size} ${orb.className} rounded-full blur-3xl transition-all duration-700`}
+          className={`absolute ${orb.position} ${orb.size} ${orb.className} rounded-full blur-[80px] transition-all duration-700`}
           animate={orb.animation}
           transition={{
             duration: orb.duration,

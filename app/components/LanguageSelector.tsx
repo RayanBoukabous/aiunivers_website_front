@@ -2,15 +2,16 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaGlobe } from 'react-icons/fa';
 import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage, Language } from '../contexts/LanguageContext';
 
-const languages: { code: Language; name: string; flag: string }[] = [
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'ar', name: 'العربية', flag: '🇩🇿' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+const languages: { code: Language; name: string }[] = [
+  { code: 'en', name: 'English' },
+  { code: 'fr', name: 'Français' },
+  { code: 'ar', name: 'العربية' },
+  { code: 'es', name: 'Español' },
+  { code: 'de', name: 'Deutsch' },
 ];
 
 export default function LanguageSelector() {
@@ -50,7 +51,7 @@ export default function LanguageSelector() {
         aria-label="Select language"
       >
         <div className="flex items-center gap-2">
-          <span className="text-lg">{currentLanguage.flag}</span>
+          <FaGlobe className={`w-4 h-4 ${theme === 'dark' ? 'text-white/70' : 'text-black/70'}`} />
           <span className="text-sm font-medium hidden sm:inline">{currentLanguage.code.toUpperCase()}</span>
           <svg
             className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
@@ -108,7 +109,17 @@ export default function LanguageSelector() {
                       : ''
                   }`}
                 >
-                  <span className="text-xl">{lang.flag}</span>
+                  <span
+                    className={`flex-shrink-0 w-8 h-8 rounded-md flex items-center justify-center text-xs font-semibold ${
+                      language === lang.code
+                        ? 'bg-emerald-500/20 text-emerald-400'
+                        : theme === 'dark'
+                          ? 'bg-white/10 text-gray-400'
+                          : 'bg-black/5 text-gray-600'
+                    }`}
+                  >
+                    {lang.code.toUpperCase()}
+                  </span>
                   <span
                     className={`flex-1 text-sm font-medium transition-colors duration-300 ${
                       theme === 'dark' ? 'text-white' : 'text-black'

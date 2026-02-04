@@ -47,13 +47,13 @@ export default function Home() {
               transition={{ duration: 0.8, ease: 'easeOut' }}
               className="space-y-6 sm:space-y-8 w-full"
             >
-              <h1 className="relative px-1 sm:px-2">
+              <h1 className="relative px-1 sm:px-2 w-full max-w-full overflow-hidden">
                 {!titleComplete ? (
                   <TypewriterText
                     text="AIUNIVERS"
                     speed={150}
                     delay={500}
-                    className="text-7xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold tracking-[-0.02em] sm:tracking-[-0.03em] md:tracking-[-0.04em] block leading-[0.9] sm:leading-[0.95]"
+                    className="font-extrabold tracking-[-0.02em] sm:tracking-[-0.03em] md:tracking-[-0.04em] block leading-[0.9] sm:leading-[0.95] text-[clamp(1.75rem,9vw,8rem)]"
                     useGradient={true}
                     onComplete={() => {
                       setTitleComplete(true);
@@ -62,7 +62,7 @@ export default function Home() {
                   />
                 ) : (
                   <span
-                    className={`text-7xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold tracking-[-0.02em] sm:tracking-[-0.03em] md:tracking-[-0.04em] block leading-[0.9] sm:leading-[0.95] transition-all duration-500 ${
+                    className={`font-extrabold tracking-[-0.02em] sm:tracking-[-0.03em] md:tracking-[-0.04em] block leading-[0.9] sm:leading-[0.95] transition-all duration-500 text-[clamp(1.75rem,9vw,8rem)] ${
                       theme === 'dark' 
                         ? 'text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-emerald-600 to-green-700'
                         : 'text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-emerald-700 to-green-800'

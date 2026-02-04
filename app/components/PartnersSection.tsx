@@ -92,19 +92,19 @@ export default function PartnersSection() {
 
         {/* Partners Marquee */}
         <div className="relative w-full overflow-hidden py-8 sm:py-12">
-          {/* Gradient Overlays for fade effect */}
+          {/* Gradient Overlays for fade effect - dégradés doux pour ne pas masquer le contenu */}
           <div
-            className={`absolute left-0 top-0 bottom-0 w-12 sm:w-24 lg:w-40 z-10 pointer-events-none ${
+            className={`absolute left-0 top-0 bottom-0 w-6 sm:w-12 md:w-20 lg:w-32 z-10 pointer-events-none ${
               theme === 'dark'
-                ? 'bg-gradient-to-r from-black to-transparent'
-                : 'bg-gradient-to-r from-white to-transparent'
+                ? 'bg-gradient-to-r from-black/60 via-black/20 to-transparent'
+                : 'bg-gradient-to-r from-white/60 via-white/20 to-transparent'
             }`}
           />
           <div
-            className={`absolute right-0 top-0 bottom-0 w-12 sm:w-24 lg:w-40 z-10 pointer-events-none ${
+            className={`absolute right-0 top-0 bottom-0 w-6 sm:w-12 md:w-20 lg:w-32 z-10 pointer-events-none ${
               theme === 'dark'
-                ? 'bg-gradient-to-l from-black to-transparent'
-                : 'bg-gradient-to-l from-white to-transparent'
+                ? 'bg-gradient-to-l from-black/60 via-black/20 to-transparent'
+                : 'bg-gradient-to-l from-white/60 via-white/20 to-transparent'
             }`}
           />
 

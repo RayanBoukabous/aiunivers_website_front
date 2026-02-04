@@ -83,7 +83,7 @@ export default function ParticleBackground() {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            const opacity = (1 - distance / maxDistance) * 0.3;
+            const opacity = (1 - distance / maxDistance) * 0.18;
             ctx.strokeStyle = `rgba(16, 185, 129, ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
