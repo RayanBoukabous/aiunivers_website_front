@@ -60,7 +60,7 @@ const formSchema = z.object({
 
 export default function ContactPage() {
   const { theme } = useTheme();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -322,7 +322,7 @@ export default function ContactPage() {
                                 autoComplete="name"
                               />
                               {fieldState.invalid && (
-                                <FieldError errors={[fieldState.error]} />
+                                <FieldError errors={fieldState.error ? [fieldState.error] : []} />
                               )}
                             </Field>
                           )}
@@ -345,7 +345,7 @@ export default function ContactPage() {
                                 autoComplete="email"
                               />
                               {fieldState.invalid && (
-                                <FieldError errors={[fieldState.error]} />
+                                <FieldError errors={fieldState.error ? [fieldState.error] : []} />
                               )}
                             </Field>
                           )}
@@ -368,7 +368,7 @@ export default function ContactPage() {
                               autoComplete="organization"
                             />
                             {fieldState.invalid && (
-                              <FieldError errors={[fieldState.error]} />
+                              <FieldError errors={fieldState.error ? [fieldState.error] : []} />
                             )}
                           </Field>
                         )}
@@ -390,7 +390,7 @@ export default function ContactPage() {
                               autoComplete="off"
                             />
                             {fieldState.invalid && (
-                              <FieldError errors={[fieldState.error]} />
+                              <FieldError errors={fieldState.error ? [fieldState.error] : []} />
                             )}
                           </Field>
                         )}
@@ -423,7 +423,7 @@ export default function ContactPage() {
                               {t('contact.form.message.description')}
                             </FieldDescription>
                             {fieldState.invalid && (
-                              <FieldError errors={[fieldState.error]} />
+                              <FieldError errors={fieldState.error ? [fieldState.error] : []} />
                             )}
                           </Field>
                         )}
